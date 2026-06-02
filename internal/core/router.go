@@ -10,8 +10,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-
-	root "github.com/shniranjan/lightboot"
 	"github.com/shniranjan/lightboot/internal/event"
 	"github.com/shniranjan/lightboot/web"
 )
@@ -85,12 +83,6 @@ func NewRouter(deps *RouterDeps) http.Handler {
 	// Wrap API routes with auth
 	authedAPI := AuthMiddleware(apiMux, deps.Config, deps.RateLimiter)
 	mux.Handle("/api/", authedAPI)
-
-	// --- Documentation site (public) ---
-	docsFS, docsErr := fs.Sub(root.DocsFS, "site")
-	if docsErr == nil {
-		mux.Handle("/docs/", http.StripPrefix("/docs", http.FileServer(http.FS(docsFS))))
-	}
 
 	// --- SPA fallback ---
 	webFS, err := fs.Sub(web.Dist, "dist")
