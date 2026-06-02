@@ -1,0 +1,21 @@
+# LightBoot Configuration
+# Copy this file to config.yaml and customize.
+# All values shown are defaults.
+
+http_port: 8080
+http_address: "0.0.0.0"
+tftp_port: 69
+tftp_address: "0.0.0.0"
+dhcp_proxy_enabled: true
+dhcp_proxy_port: 67
+dhcp_proxy_address: "0.0.0.0"
+iso_dir: "./iso"
+cache_dir: "./cache"
+data_dir: "./data"
+profiles_dir: "./profiles"
+bootfiles_dir: "./bootfiles"
+api_token_path: "./data/.api_token"
+max_upload_size: 21474836480  # 20 GB
+scanner_interval: 300          # seconds
+log_level: "info"              # debug, info, warn, error
+log_file: ""                   # leave empty for console only

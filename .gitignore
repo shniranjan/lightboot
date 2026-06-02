@@ -1,0 +1,42 @@
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+lightboot
+
+# Test binary
+*.test
+
+# Go
+vendor/
+
+# Build output
+web/dist/
+
+# Data directories (created at runtime)
+data/
+cache/
+iso/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+config.yaml
+.iso
+router_changes.py
+tmp/
+.mkdocs-venv/
+LightBoot — Complete Development Blueprint.md

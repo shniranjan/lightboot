@@ -1,0 +1,54 @@
+# Git
+.git/
+.gitignore
+
+# Build artifacts
+bin/
+*.exe
+*.dll
+*.so
+
+# Web build output (built inside Docker)
+web/dist/
+web/node_modules/
+
+# Runtime data (should be volumes)
+data/
+cache/
+iso/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Config (kept outside; mount or provide via env)
+config.yaml
+
+# Test ISOs
+testiso/
+
+# MkDocs site (built separately)
+site/
+.mkdocs-venv/
+
+# CI/CD
+.github/
+
+# Docker itself
+docker/
+docker-compose*.yml
+
+# Random scripts / notes
+router_changes.py
+*.md
+LICENSE

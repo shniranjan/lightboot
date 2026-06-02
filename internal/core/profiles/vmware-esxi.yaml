@@ -1,0 +1,25 @@
+# VMware ESXi stub profile — boot entry will appear but requires manual
+# kernel/initrd preparation due to VMware's proprietary boot process.
+name: VMware ESXi
+distro: vmware
+version: "8.0"
+family: vmware
+description: VMware ESXi 8.x (requires manual boot files)
+
+iso_match:
+  - "ESXi-.*\\.iso$"
+
+boot:
+  kernel: mboot.efi
+  initrd:
+    - ""
+  append: ""
+
+menus:
+  ipxe: |
+    echo VMware ESXi detected
+    echo Please prepare boot files manually following the docs.
+    echo See https://docs.vmware.com for PXE instructions.
+    sleep 5
+  chain: |
+    echo VMware ESXi - manual setup required

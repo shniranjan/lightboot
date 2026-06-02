@@ -1,0 +1,16 @@
+name: "Arch Linux (latest)"
+distro: "arch"
+version: "latest"
+arch: "amd64"
+kernel: "arch/boot/x86_64/vmlinuz-linux"
+initrd: "arch/boot/x86_64/initramfs-linux.img"
+cmdline: "archisobasedir=arch earlymodules=loop"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "arch/boot/x86_64/vmlinuz-linux"
+  contents:
+    - path: "arch/pkglist.txt"
+      regex: "archlinux"

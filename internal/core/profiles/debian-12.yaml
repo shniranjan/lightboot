@@ -1,0 +1,17 @@
+name: "Debian 12"
+distro: "debian"
+version: "12"
+arch: "amd64"
+kernel: "linux"
+initrd: "initrd.gz"
+cmdline: "auto=true priority=critical net.ifnames=0 biosdevname=0 ---"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "linux"
+    - "initrd.gz"
+  contents:
+    - path: ".disk/info"
+      regex: "Debian GNU/Linux 12.*"

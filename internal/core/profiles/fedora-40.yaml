@@ -1,0 +1,17 @@
+name: "Fedora 40"
+distro: "fedora"
+version: "40"
+arch: "amd64"
+kernel: "images/pxeboot/vmlinuz"
+initrd: "images/pxeboot/initrd.img"
+cmdline: "inst.stage2=hd:LABEL=Fedora ro quiet"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "images/pxeboot/vmlinuz"
+    - "images/pxeboot/initrd.img"
+  contents:
+    - path: ".discinfo"
+      regex: "Fedora 40.*"

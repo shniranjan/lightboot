@@ -1,0 +1,17 @@
+name: "Ubuntu 24.04 Desktop"
+distro: "ubuntu"
+version: "24.04"
+arch: "amd64"
+kernel: "casper/vmlinuz"
+initrd: "casper/initrd"
+cmdline: "boot=casper maybe-ubiquity quiet splash ---"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "casper/vmlinuz"
+    - "casper/initrd"
+  contents:
+    - path: ".disk/info"
+      regex: "Ubuntu 24\\.04.*Desktop"

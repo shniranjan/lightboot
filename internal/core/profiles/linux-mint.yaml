@@ -1,0 +1,17 @@
+name: "Linux Mint"
+distro: "linuxmint"
+version: ""
+arch: "amd64"
+kernel: "casper/vmlinuz"
+initrd: "casper/initrd.lz"
+cmdline: "boot=casper quiet splash"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "casper/vmlinuz"
+    - "casper/initrd.lz"
+  contents:
+    - path: ".disk/info"
+      regex: "Linux Mint.*"

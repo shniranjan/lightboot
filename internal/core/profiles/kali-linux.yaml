@@ -1,0 +1,17 @@
+name: "Kali Linux"
+distro: "kali"
+version: ""
+arch: "amd64"
+kernel: "live/vmlinuz"
+initrd: "live/initrd.img"
+cmdline: "boot=live components quiet splash"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "live/vmlinuz"
+    - "live/initrd.img"
+  contents:
+    - path: ".disk/info"
+      regex: "Kali.*Linux"

@@ -1,0 +1,17 @@
+name: "Alpine 3.20"
+distro: "alpine"
+version: "3.20"
+arch: "amd64"
+kernel: "vmlinuz-lts"
+initrd: "initramfs-lts"
+cmdline: "alpine_repo=http://dl-cdn.alpinelinux.org/alpine/v3.20/main modules=loop,squashfs,sd-mod,usb-storage quiet"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "vmlinuz-lts"
+    - "initramfs-lts"
+  contents:
+    - path: ".alpine-release"
+      regex: "3\\.20\\.\\d+"

@@ -1,0 +1,17 @@
+name: "Ubuntu 24.04 Server"
+distro: "ubuntu"
+version: "24.04"
+arch: "amd64"
+kernel: "casper/vmlinuz"
+initrd: "casper/initrd"
+cmdline: "boot=casper net.ifnames=0 biosdevname=0 autoinstall ds=nocloud-net;s=http://_preseed_/ ---"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "casper/vmlinuz"
+    - "casper/initrd"
+  contents:
+    - path: ".disk/info"
+      regex: "Ubuntu.*24\\.04.*Server"

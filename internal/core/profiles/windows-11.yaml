@@ -1,0 +1,27 @@
+# Windows 11 stub profile — requires WinPE/WDS infrastructure.
+# LightBoot cannot fully automate Windows deployment; this entry
+# points users to documentation for manual setup.
+name: Windows 11
+distro: windows
+version: "11"
+family: windows
+description: Windows 11 (requires WinPE/WDS)
+
+iso_match:
+  - "Win11.*\\.iso$"
+  - "Windows11.*\\.iso$"
+
+boot:
+  kernel: wimboot
+  initrd:
+    - ""
+  append: ""
+
+menus:
+  ipxe: |
+    echo Windows 11 ISO detected
+    echo Automated boot not supported.
+    echo Please see docs for wimboot / WinPE setup.
+    sleep 5
+  chain: |
+    echo Windows 11 - manual setup required

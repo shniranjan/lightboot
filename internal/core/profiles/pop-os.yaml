@@ -1,0 +1,17 @@
+name: "Pop!_OS"
+distro: "pop"
+version: ""
+arch: "amd64"
+kernel: "casper/vmlinuz.efi"
+initrd: "casper/initrd.img"
+cmdline: "boot=casper quiet splash"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "casper/vmlinuz.efi"
+    - "casper/initrd.img"
+  contents:
+    - path: ".disk/info"
+      regex: "Pop!_OS.*"

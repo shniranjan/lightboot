@@ -1,0 +1,17 @@
+name: "Proxmox VE"
+distro: "proxmox"
+version: ""
+arch: "amd64"
+kernel: "boot/linux26"
+initrd: "boot/initrd.img"
+cmdline: "ramdisk_size=16777216 rw quiet"
+boot_modes:
+  - bios
+  - uefi
+detect:
+  files:
+    - "boot/linux26"
+    - "boot/initrd.img"
+  contents:
+    - path: ".discinfo"
+      regex: "Proxmox.*"
