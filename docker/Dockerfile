@@ -39,7 +39,7 @@ WORKDIR /app
 COPY --from=builder /src/lightboot /app/lightboot
 
 # Copy profiles and bootfiles for runtime use
-COPY --from=builder /src/profiles /app/profiles
+COPY --from=builder /src/internal/core/profiles /app/profiles
 COPY --from=builder /src/bootfiles /app/bootfiles
 
 # Create runtime directories
