@@ -5,7 +5,7 @@ bin/
 *.dll
 *.so
 *.dylib
-lightboot
+/lightboot
 
 # Test binary
 *.test
@@ -40,3 +40,7 @@ router_changes.py
 tmp/
 .mkdocs-venv/
 LightBoot — Complete Development Blueprint.md
+
+# Codebuddy agent files
+.codebuddy/
+
